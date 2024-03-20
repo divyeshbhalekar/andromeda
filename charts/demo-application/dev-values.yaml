@@ -8,10 +8,10 @@ env:
   COMPANY_ID: 5402476c-df7d-44bc-9c1b-b0a6afb931d7
 resources:
   limits:
-    cpu: "200m"
-    memory: 400Mi
+    cpu: "60m"
+    memory: 70Mi
   requests:
-    cpu: "150m"
-    memory: 250Mi
+    cpu: "40m"
+    memory: 50Mi
 
 
