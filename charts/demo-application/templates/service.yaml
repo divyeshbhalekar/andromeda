@@ -1,13 +1,14 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: lb-service
+  name: demo-application
+  namespace: {{ .Values.NAMESPACE  }}
   labels:
-    app: lb-service
+    app: demo-application
 spec:
   type: LoadBalancer
   ports:
   - port: 80
     targetPort: 5000
   selector:
-    app: flaskdemo
+    app: demo-application

@@ -3,21 +3,28 @@ kind: Deployment
 metadata:
   creationTimestamp: null
   labels:
-    app: flaskdemo
-  name: flaskdemo
+    app: demo-application
+  name: demo-application
+  namespace: {{ .Values.NAMESPACE  }}
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: flaskdemo
+      app: demo-application
   strategy: {}
   template:
     metadata:
       creationTimestamp: null
       labels:
-        app: flaskdemo
+        app: demo-application
     spec:
       containers:
       - image: demodockeracc/demo-application:{{ .Values.image.tag }}
-        name: flaskdemo
-        resources: {}
+        name: demo-application
+        resources: 
+          limits:
+            cpu: {{ .Values.resources.limits.cpu }}
+            memory: {{ .Values.resources.limits.memory }}
+          requests:
+            cpu: {{ .Values.resources.requests.cpu }}
+            memory: {{ .Values.resources.requests.memory }}

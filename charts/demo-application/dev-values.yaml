@@ -1,0 +1,15 @@
+# Values:
+#   ecr: true
+NAMESPACE: demo
+image:
+  tag: "v1.9.0"
+  repository: 620934872547.dkr.ecr.us-east-2.amazonaws.com/account-change-history
+env:
+  COMPANY_ID: 5402476c-df7d-44bc-9c1b-b0a6afb931d7
+resources:
+  limits:
+    cpu: "200m"
+    memory: 400Mi
+  requests:
+    cpu: "150m"
+    memory: 250Mi
