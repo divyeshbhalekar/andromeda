@@ -19,7 +19,7 @@ spec:
         app: demo-application
     spec:
       containers:
-      - image: 681089424129.dkr.ecr.ap-south-1.amazonaws.com/demo-application:{{ .Values.image.tag }}
+      - image: demodockeracc/demo-application:{{ .Values.image.tag }}
         name: demo-application
         resources: 
           limits:
